@@ -18,4 +18,24 @@ function generateGrid(px) {
     }
 };
 
-generateGrid(32);
+generateGrid(16);
+
+function getInput() {
+
+    let input = prompt('Enter the size of the board', 16);
+
+    if (input == "" || input == null) {
+        prompt('Enter the size of the board');
+    }else if (input < 1 || input > 100) {
+        prompt('Enter a number between 1 and 100');
+    }else {
+        return input;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    inputGrid.addEventListener('click', () => {
+        let px = getInput()
+        generateGrid(px);
+    })
+});
